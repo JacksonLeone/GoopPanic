@@ -19,5 +19,11 @@ public class PlayerHandler : MonoBehaviour
             gameManager.PlayerPickups += 1;
             other.gameObject.SetActive(false);
         }
+
+        if (other.CompareTag("Goop"))
+        {
+            gameManager.RestartLevel();
+            Destroy(gameObject);
+        }
     }
 }

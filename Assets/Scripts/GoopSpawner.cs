@@ -15,14 +15,15 @@ public class GoopSpawner : MonoBehaviour
             GameObject newObject = Instantiate(GoopParticle, this.transform.position, this.transform.rotation);
             newObject.GetComponent<Rigidbody2D>().velocity = new Vector2(Random.Range(-10, 10), -5);
         }
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            isTriggered = !isTriggered;
-        }
     }
 
     public void TriggerFlow()
     {
         isTriggered = true;
+    }
+
+    public void StopFlow()
+    {
+        isTriggered = false;
     }
 }
