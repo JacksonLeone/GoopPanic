@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class TreasureActivation : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private GameManager gameManager;
+    private void Start()
+    {
+        gameManager = FindObjectOfType<GameManager>();
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -13,7 +17,7 @@ public class TreasureActivation : MonoBehaviour
         {
             FindObjectOfType<GoopSpawner>().TriggerFlow();
             gameObject.SetActive(false);
-
+            gameManager.PickupTreasure();
         }
     }
 }
