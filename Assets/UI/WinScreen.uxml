@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/StartMenu.uss?fileID=7433441132597879392&amp;guid=9d671d2b404457b44a169dea285774fd&amp;type=3#StartMenu" />
+    <ui:VisualElement style="flex-grow: 1; align-items: center; justify-content: center; background-color: rgba(255, 236, 165, 0.51);">
+        <ui:Label text="You beat the level!" display-tooltip-when-elided="true" style="font-size: 48px;" />
+        <ui:Label text="If you want to play again, press &apos;r&apos;." display-tooltip-when-elided="true" style="font-size: 20px;" />
+    </ui:VisualElement>
+</ui:UXML>

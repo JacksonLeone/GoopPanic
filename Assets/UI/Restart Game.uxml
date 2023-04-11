@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:VisualElement style="flex-grow: 1; justify-content: center; background-color: rgba(118, 118, 118, 0.51);">
+        <ui:VisualElement>
+            <ui:Label text="Press &apos;r&apos; to restart level" display-tooltip-when-elided="true" name="RestartLevel" style="align-items: center; flex-grow: 0; -unity-text-align: lower-center; margin-top: 0; font-size: 24px; margin-bottom: 40px;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

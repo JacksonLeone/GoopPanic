@@ -43,9 +43,9 @@ public class GoopSpawner : MonoBehaviour
         isTriggered = false;
     }
 
-    public void spawnParticle(Transform transform)
-    {
-        GameObject newObject = Instantiate(GoopParticle, this.transform.position, this.transform.rotation);
-        newObject.GetComponent<Rigidbody2D>().velocity = new Vector2(Random.Range(-10, 10), -5);
-    }
+    // public void spawnParticle(Transform transform)
+    // {
+    //     GameObject newObject = Instantiate(GoopParticle, this.transform.position, this.transform.rotation);
+    //     newObject.GetComponent<Rigidbody2D>().velocity = new Vector2(Random.Range(-10, 10), -5);
+    // }
 }

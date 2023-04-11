@@ -5,11 +5,22 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public int PlayerPickups = 0;
-    public bool beatLevel = false;
     public bool treasure = false;
+    public GameObject Player;
+    private RestartLevel rl;
+    private BeatLevel bl;
+
+    private void Start()
+    {
+        rl = FindObjectOfType<RestartLevel>();
+        rl.gameObject.SetActive(false);
+        bl = FindObjectOfType<BeatLevel>();
+        bl.gameObject.SetActive(false);
+    }
 
     public void RestartLevel()
     {
+        rl.gameObject.SetActive(true);
         print("Restart level?");
     }
 
@@ -25,8 +36,9 @@ public class GameManager : MonoBehaviour
 
     public void BeatLevel()
     {
-        beatLevel = true;
         FindObjectOfType<GoopSpawner>().StopFlow();
+        bl.gameObject.SetActive(true);
+        Player.GetComponent<TarodevController.PlayerController>().enabled = false;
         print("You beat the level!");
     }
 }

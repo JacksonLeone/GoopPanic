@@ -12,7 +12,6 @@ public class TreasureActivation : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        print("enteredTrigger");
         if (other.CompareTag("Player"))
         {
             FindObjectOfType<GoopSpawner>().TriggerFlow();
