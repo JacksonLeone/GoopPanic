@@ -33,18 +33,22 @@ namespace TarodevController
         {
             if (!_active) return;
             // Calculate velocity
-            Velocity = (transform.position - _lastPosition) / Time.deltaTime;
-            _lastPosition = transform.position;
+            if(Time.timeScale == 1f)
+            {
+                Velocity = (transform.position - _lastPosition) / Time.deltaTime;
+                _lastPosition = transform.position;
 
-            GatherInput();
-            RunCollisionChecks();
+                GatherInput();
+                RunCollisionChecks();
 
-            CalculateWalk(); // Horizontal movement
-            CalculateJumpApex(); // Affects fall speed, so calculate before gravity
-            CalculateGravity(); // Vertical movement
-            CalculateJump(); // Possibly overrides vertical
+                CalculateWalk(); // Horizontal movement
+                CalculateJumpApex(); // Affects fall speed, so calculate before gravity
+                CalculateGravity(); // Vertical movement
+                CalculateJump(); // Possibly overrides vertical
 
-            MoveCharacter(); // Actually perform the axis movement
+                MoveCharacter(); // Actually perform the axis movement
+            }
+          
         }
 
 

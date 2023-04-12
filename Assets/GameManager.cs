@@ -9,9 +9,11 @@ public class GameManager : MonoBehaviour
     public GameObject Player;
     private RestartLevel rl;
     private BeatLevel bl;
+    public bool gameWon;
 
     private void Start()
     {
+        gameWon = false;
         rl = FindObjectOfType<RestartLevel>();
         rl.gameObject.SetActive(false);
         bl = FindObjectOfType<BeatLevel>();
@@ -34,11 +36,19 @@ public class GameManager : MonoBehaviour
         return treasure;
     }
 
+    public bool GetGameWon()
+    {
+        return gameWon;
+    }
+
     public void BeatLevel()
     {
+        gameWon = true;
         FindObjectOfType<GoopSpawner>().StopFlow();
         bl.gameObject.SetActive(true);
         Player.GetComponent<TarodevController.PlayerController>().enabled = false;
         print("You beat the level!");
     }
+
+    
 }
