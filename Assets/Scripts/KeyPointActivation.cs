@@ -23,6 +23,14 @@ public class KeyPointActivation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (active)
+        {
+            movingBlock.transform.position = Vector2.MoveTowards(movingBlock.transform.position, endPos.position, 1.0f);
+        }
+        if (!active)
+        {
+            movingBlock.transform.position = Vector2.MoveTowards(movingBlock.transform.position, startPos, 1.0f);
+        }
         if (Input.GetKeyDown(KeyCode.E) && inRange)
         {
             if (!active && gameManager.PlayerPickups > 0)
@@ -39,14 +47,14 @@ public class KeyPointActivation : MonoBehaviour
     private void SetActive()
     {
         active = true;
-        movingBlock.transform.position = endPos.position;
+        //movingBlock.transform.position = endPos.position;
         gameManager.PlayerPickups -= 1;
         gameObject.GetComponent<SpriteRenderer>().color = activeColor;
     }
     private void SetInactive()
     {
         active = false;
-        movingBlock.transform.position = startPos;
+       // movingBlock.transform.position = startPos;
         gameManager.PlayerPickups += 1;
         gameObject.GetComponent<SpriteRenderer>().color = inactiveColor;
     }
