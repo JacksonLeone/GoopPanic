@@ -5,7 +5,7 @@ using UnityEngine;
 public class GoopSpawner : MonoBehaviour
 {
     public GameObject GoopParticle;
-    public float increaseFactor = 0;
+    // public float increaseFactor = 0;
     private float currentSizeIncrease = 0;
     public float maxIncrease = 0;
     private bool isTriggered = false;
@@ -22,13 +22,13 @@ public class GoopSpawner : MonoBehaviour
             if (spawnTimer > spawnTime)
             {
                 spawnTimer = 0;
-                GoopParticle.GetComponent<GoopParticle>().setIncreaseFactor(currentSizeIncrease);
+                // GoopParticle.GetComponent<GoopParticle>().setIncreaseFactor(currentSizeIncrease);
                 GameObject newObject = Instantiate(GoopParticle, this.transform.position, this.transform.rotation);
-                newObject.GetComponent<Rigidbody2D>().velocity = new Vector2(Random.Range(-10, 10), 10);
-                if (currentSizeIncrease < maxIncrease)
-                {
-                    currentSizeIncrease += increaseFactor;
-                }
+                newObject.GetComponent<Rigidbody2D>().velocity = new Vector2(Random.Range(-3, 3), 12);
+                // if (currentSizeIncrease < maxIncrease)
+                // {
+                //     currentSizeIncrease += increaseFactor;
+                // }
             }
         }
     }

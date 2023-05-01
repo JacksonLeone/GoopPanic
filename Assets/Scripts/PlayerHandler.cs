@@ -14,6 +14,7 @@ public class PlayerHandler : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        print("Triggered");
         if (other.CompareTag("Pickup"))
         {
             gm.PlayerPickups += 1;
