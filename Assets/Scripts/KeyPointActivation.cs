@@ -53,10 +53,14 @@ public class KeyPointActivation : MonoBehaviour
     }
     private void SetInactive()
     {
-        active = false;
-       // movingBlock.transform.position = startPos;
-        gameManager.PlayerPickups += 1;
-        gameObject.GetComponent<SpriteRenderer>().color = inactiveColor;
+        if(gameManager.PlayerPickups == 0)
+        {
+            active = false;
+            // movingBlock.transform.position = startPos;
+            gameManager.PlayerPickups += 1;
+            gameObject.GetComponent<SpriteRenderer>().color = inactiveColor;
+        }
+       
     }
 
 

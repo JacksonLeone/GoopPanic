@@ -24,6 +24,9 @@ namespace TarodevController
         private Vector3 _lastPosition;
         private float _currentHorizontalSpeed, _currentVerticalSpeed;
 
+        public GameObject rightLines;
+        public GameObject leftLines;
+
         // This is horrible, but for some reason colliders are not fully established when update starts...
         private bool _active;
         void Awake() => Invoke(nameof(Activate), 0.5f);
@@ -177,6 +180,15 @@ namespace TarodevController
             {
                 // Set horizontal move speed
                 _currentHorizontalSpeed += Input.X * _acceleration * Time.deltaTime;
+                if(_currentHorizontalSpeed < 0)
+                {
+                    rightLines.SetActive(true);
+                    leftLines.SetActive(false);
+                } else
+                {
+                    rightLines.SetActive(false);
+                    leftLines.SetActive(true);
+                }
 
                 // clamped by max frame movement
                 _currentHorizontalSpeed = Mathf.Clamp(_currentHorizontalSpeed, -_moveClamp, _moveClamp);
@@ -187,6 +199,8 @@ namespace TarodevController
             }
             else
             {
+                leftLines.SetActive(false);
+                rightLines.SetActive(false);
                 // No input. Let's slow the character down
                 _currentHorizontalSpeed = Mathf.MoveTowards(_currentHorizontalSpeed, 0, _deAcceleration * Time.deltaTime);
             }

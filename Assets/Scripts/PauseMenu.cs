@@ -8,15 +8,17 @@ public class PauseMenu : MonoBehaviour
 {
     public static bool gameIsPaused = false;
     public GameObject pauseMenuUI;
+    private GameManager gm;
 
     private void Awake()
     {
+        gm = FindObjectOfType<GameManager>();
         Time.timeScale = 1.0f;
         pauseMenuUI.SetActive(false);
     }
     private void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Escape))
+        if (Input.GetKeyUp(KeyCode.Escape) && gm.gameWon == false)
         {
             if (gameIsPaused)
             {
