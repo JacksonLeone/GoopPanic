@@ -6,7 +6,7 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadScene("Improved Level Select");
+        SceneManager.LoadScene("Level Select");
     }
 
     public void QuitGame()
@@ -14,8 +14,8 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
 
-    public void PlayTutorial()
-    {
-        SceneManager.LoadScene("Tutorial Scene");
-    }
+    // public void PlayTutorial()
+    // {
+    //     SceneManager.LoadScene("Tutorial Scene");
+    // }
 }

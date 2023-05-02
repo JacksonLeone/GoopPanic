@@ -14,7 +14,7 @@ public class MenuGoopSpawner : MonoBehaviour
     void Update()
     {
         spawnTimer += Time.deltaTime;
-        if (spawnTimer > spawnTime)
+        if (spawnTimer >= spawnTime)
         {
             spawnTimer = 0;
             // GoopParticle.GetComponent<GoopParticle>().setIncreaseFactor(currentSizeIncrease);

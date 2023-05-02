@@ -6,7 +6,7 @@ public class LevelSelectMenu : MonoBehaviour
 {
     public void GoBack()
     {
-        SceneManager.LoadScene("Improved Start Menu");
+        SceneManager.LoadScene("Start Menu");
     }
 
     public void PlayLevelOne()
