@@ -5,9 +5,6 @@ using UnityEngine;
 public class GoopSpawner : MonoBehaviour
 {
     public GameObject GoopParticle;
-    // public float increaseFactor = 0;
-    private float currentSizeIncrease = 0;
-    public float maxIncrease = 0;
     private bool isTriggered = false;
 
     private float spawnTimer;
