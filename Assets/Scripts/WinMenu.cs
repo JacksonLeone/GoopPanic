@@ -41,12 +41,12 @@ public class WinMenu : MonoBehaviour
 
     public void LevelSelect()
     {
-        SceneManager.LoadScene("LevelSelect");
+        SceneManager.LoadScene("Improved Level Select");
     }
 
     public void QuitGame()
     {
-        SceneManager.LoadScene("Start Menu");
+        SceneManager.LoadScene("Improved Start Menu");
 
     }
 

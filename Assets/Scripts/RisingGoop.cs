@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RisingGoop : MonoBehaviour
 {
+    public bool TeacherMode = false;
     public float growthRate;
     private bool isRising = false;
     [SerializeField] private GameObject GoopSpawner;
@@ -31,9 +32,14 @@ public class RisingGoop : MonoBehaviour
                 GoopSpawner.transform.position += new Vector3(0f, growthRate, 0f);
             }
         }
-        if (gm.hasTreasure())
+        if (gm.hasTreasure() && !TeacherMode)
         {
             isRising = true;
         }
+    }
+
+    public void ToggleTeacherMode(bool isOn)
+    {
+        TeacherMode = isOn;
     }
 }
