@@ -19,10 +19,10 @@ public class WinMenu : MonoBehaviour
         winMenuUI.SetActive(false);
         gm = FindObjectOfType<GameManager>();
     }
-    
+
     public void Update()
     {
-        if(gm.GetGameWon() == true)
+        if (gm.GetGameWon() == true)
         {
             winMenuUI.SetActive(true);
             Time.timeScale = 0f;
@@ -33,7 +33,7 @@ public class WinMenu : MonoBehaviour
         int milliseconds = Mathf.FloorToInt((timer * 100) % 100);
         timerText.text = string.Format("{0:0}:{1:00}.{2:00}", minutes, seconds, milliseconds);
 
-        if(timer > 0)
+        if (timer > 0)
         {
             rank.text = "A";
         }
@@ -43,7 +43,7 @@ public class WinMenu : MonoBehaviour
     {
         SceneManager.LoadScene("LevelSelect");
     }
-    
+
     public void QuitGame()
     {
         SceneManager.LoadScene("Start Menu");
