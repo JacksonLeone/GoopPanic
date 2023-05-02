@@ -7,8 +7,6 @@ public class VertKeyPointActivation : MonoBehaviour
     public bool inRange = false;
     public bool active = false;
     public GameObject movingBlock;
-    private Vector3 startPos;
-    public Transform endPos;
     public float rightLimit = 2.5f;
     public float leftLimit = 1.0f;
     public float topLimit = 1.0f;
@@ -26,7 +24,6 @@ public class VertKeyPointActivation : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        startPos = movingBlock.transform.position;
         gameManager = FindObjectOfType<GameManager>();
         print(gameObject.GetComponent<SpriteRenderer>().color);
     }
