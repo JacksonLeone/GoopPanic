@@ -29,7 +29,6 @@ public class VertKeyPointActivation : MonoBehaviour
         startPos = movingBlock.transform.position;
         gameManager = FindObjectOfType<GameManager>();
         print(gameObject.GetComponent<SpriteRenderer>().color);
-        firstCheck = false;
     }
 
     // Update is called once per frame
